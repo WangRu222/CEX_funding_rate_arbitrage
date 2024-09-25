@@ -1,9 +1,9 @@
 # funding-rate-arbitrage
-[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110//)
+
 
 ## Python library for funding rate arbitrage
 
-A framework to help you easily perform funding rate arbitrage on the following major centralized cryptocurrency exchanges (CEX).
+A framework to perform funding rate arbitrage on the following major centralized cryptocurrency exchanges (CEX).
 
 - binance
 - bybit
@@ -18,40 +18,6 @@ This library can detect perpetual contract with a large divergence in funding ra
 
 ## What's FR Arbitrage?
 Arbitrage of different funding rates among different exchanges is another trading strategy that takes advantage of the disparity in funding rates for the same cryptocurrency perpetual contracts between exchanges. It involves combining long positions with low funding rates from one exchange with short positions from another exchange with higher funding rates to generate profits. Funding rates are periodic payments between long and short traders to ensure that the perpetual contract price remains close to the underlying asset price.
-
-## Installation
-
-
-```bash
-pip install git+https://github.com/aoki-h-jp/funding-rate-arbitrage
-```
-
-## Usage
-### Fetch FR & commission
-
-```python
-from funding_rate_arbitrage.frarb import FundingRateArbitrage
-
-fr = FundingRateArbitrage()
-
-# fetch all perp funding rate on binance
-fr_binance = fr.fetch_all_funding_rate(exchange='binance')
-
-# get commission on binance with futures, maker
-cm_binance = fr.get_commission(exchange='binance', trade='futures', taker=False)
-```
-
-### Fetch FR history
-
-```python
-from funding_rate_arbitrage.frarb import FundingRateArbitrage
-
-fr = FundingRateArbitrage()
-
-# figure funding rate history
-fr.fetch_funding_rate_history(exchange='binance', symbol='BTC/USDT:USDT')
-```
-!['funding rate history example'](./img/readme_funding_rate_history.png)
 
 
 ### Display large FR divergence on single CEX
@@ -186,10 +152,6 @@ Divergence: 0.2447 %
 Commission: 0.2000 %
 ```
 
-## Disclaimer
-This project is for educational purposes only. You should not construe any such information or other material as legal,
-tax, investment, financial, or other advice. Nothing contained here constitutes a solicitation, recommendation,
-endorsement, or offer by me or any third party service provider to buy or sell any securities or other financial
 instruments in this or in any other jurisdiction in which such solicitation or offer would be unlawful under the
 securities laws of such jurisdiction.
 
